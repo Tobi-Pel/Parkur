@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://csnxmtuuode4i"]
+[gd_scene load_steps=8 format=3 uid="uid://csnxmtuuode4i"]
 
 [ext_resource type="PackedScene" uid="uid://qreq2w0mu8h2" path="res://block.tscn" id="1_4y0ew"]
 [ext_resource type="PackedScene" uid="uid://ba52xc235p8pb" path="res://player.tscn" id="2_uhrpw"]
+[ext_resource type="Environment" uid="uid://7byi32fv8xmx" path="res://Resources/node_3d_environment.tres" id="4_dletc"]
 [ext_resource type="PackedScene" uid="uid://c6lskca4antrx" path="res://coin.tscn" id="5_s6qxb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14674"]
+albedo_color = Color(0.592157, 0.466667, 0.956863, 1)
+metallic = 0.21
 
 [sub_resource type="BoxMesh" id="BoxMesh_w7flf"]
 material = SubResource("StandardMaterial3D_14674")
@@ -41,6 +44,12 @@ transform = Transform3D(1, 0, 0, 0, 0.999716, -0.023821, 0, 0.023821, 0.999716, 
 [node name="Block2" parent="Blocks" instance=ExtResource("1_4y0ew")]
 transform = Transform3D(-0.0246882, -0.0426177, 0.998786, -0.0140248, -0.998978, -0.0429724, 0.999597, -0.0150688, 0.0240652, 1.93436, 1.20915, 0)
 
+[node name="Block3" parent="Blocks" instance=ExtResource("1_4y0ew")]
+transform = Transform3D(-0.0246882, -0.0426177, 0.998786, -0.0140248, -0.998978, -0.0429724, 0.999597, -0.0150688, 0.0240652, -0.0684612, 3.3853, 2.70173)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("1_4y0ew")]
+transform = Transform3D(-0.0246882, -0.0426177, 0.998786, -0.0140248, -0.998978, -0.0429724, 0.999597, -0.0150688, 0.0240652, -1.90395, 4.07965, 2.70173)
+
 [node name="Player" parent="." instance=ExtResource("2_uhrpw")]
 transform = Transform3D(0.999129, -0.0417118, -0.00142601, 0.0417362, 0.998545, 0.0341375, 0, -0.0341673, 0.999416, -1.43192, 1.10739, -0.914319)
 
@@ -50,4 +59,10 @@ transform = Transform3D(0.999129, -0.0417118, -0.00142601, 0.0417362, 0.998545, 
 transform = Transform3D(-0.00623083, 0.999981, 0, -0.999981, -0.00623083, 0, 0, 0, 1, 1.90157, 1.94638, 0.0188857)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("5_s6qxb")]
-transform = Transform3D(-0.00623083, 0.999981, 0, -0.999981, -0.00623083, 0, 0, 0, 1, 1.7645, 2.75197, 2.04286)
+transform = Transform3D(-0.00623083, 0.999981, 0, -0.999981, -0.00623083, 0, 0, 0, 1, 0.0511121, 4.07735, 2.20552)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("5_s6qxb")]
+transform = Transform3D(-0.00623083, 0.999981, 0, -0.999981, -0.00623083, 0, 0, 0, 1, -1.8554, 4.57112, 2.58438)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_dletc")
