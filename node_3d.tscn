@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://csnxmtuuode4i"]
+[gd_scene load_steps=7 format=3 uid="uid://csnxmtuuode4i"]
 
 [ext_resource type="PackedScene" uid="uid://qreq2w0mu8h2" path="res://block.tscn" id="1_4y0ew"]
 [ext_resource type="PackedScene" uid="uid://ba52xc235p8pb" path="res://player.tscn" id="2_uhrpw"]
 [ext_resource type="PackedScene" uid="uid://c6lskca4antrx" path="res://coin.tscn" id="5_s6qxb"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14674"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_w7flf"]
+material = SubResource("StandardMaterial3D_14674")
 size = Vector3(9, 0.3, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gj3mg"]
@@ -13,7 +16,7 @@ size = Vector3(9, 0.3, 10)
 [node name="Level1" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.997001, -0.0141247, -0.0760909, 0.0178071, 0.998692, 0.0479359, 0.0753143, -0.0491471, 0.995948, -0.771367, 2.39049, 5.73523)
+transform = Transform3D(-0.999491, -0.0160732, -0.0275412, -0.0223891, 0.968714, 0.247169, 0.0227067, 0.24766, -0.968581, 0.0572506, 4.42609, -9.3792)
 fov = 76.2686
 
 [node name="Floor" type="StaticBody3D" parent="."]
@@ -33,13 +36,18 @@ shadow_enabled = true
 [node name="Blocks" type="Node3D" parent="."]
 
 [node name="Block1" parent="Blocks" instance=ExtResource("1_4y0ew")]
-transform = Transform3D(1, 0, 0, 0, 0.875161, -0.483832, 0, 0.483832, 0.875161, 0, 6.87397, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999716, -0.023821, 0, 0.023821, 0.999716, 1.64432, 2.16706, 2.00812)
 
 [node name="Block2" parent="Blocks" instance=ExtResource("1_4y0ew")]
-transform = Transform3D(-0.0248334, -0.874891, 0.483683, 0.999692, -0.0217333, 0.0120152, 0, 0.483832, 0.875161, 1.93436, 0.796451, 0)
+transform = Transform3D(-0.0246882, -0.0426177, 0.998786, -0.0140248, -0.998978, -0.0429724, 0.999597, -0.0150688, 0.0240652, 1.93436, 1.20915, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_uhrpw")]
 transform = Transform3D(0.999129, -0.0417118, -0.00142601, 0.0417362, 0.998545, 0.0341375, 0, -0.0341673, 0.999416, -1.43192, 1.10739, -0.914319)
 
-[node name="Coin" parent="." instance=ExtResource("5_s6qxb")]
+[node name="Coins" type="Node3D" parent="."]
+
+[node name="Coin1" parent="Coins" instance=ExtResource("5_s6qxb")]
 transform = Transform3D(-0.00623083, 0.999981, 0, -0.999981, -0.00623083, 0, 0, 0, 1, 1.90157, 1.94638, 0.0188857)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("5_s6qxb")]
+transform = Transform3D(-0.00623083, 0.999981, 0, -0.999981, -0.00623083, 0, 0, 0, 1, 1.7645, 2.75197, 2.04286)
