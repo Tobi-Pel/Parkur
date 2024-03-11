@@ -20,3 +20,9 @@ mesh = SubResource("BoxMesh_hvbly")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_u0be4")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(-0.99583, 0, -0.0912234, 0, 1, 0, 0.0912234, 0, -0.99583, 0.00522304, 0.868289, -5.64781)
+metadata/_edit_group_ = true
+
+[node name="Camera3D" type="Camera3D" parent="Head"]

@@ -11,16 +11,12 @@ metallic = 0.21
 
 [sub_resource type="BoxMesh" id="BoxMesh_w7flf"]
 material = SubResource("StandardMaterial3D_14674")
-size = Vector3(9, 0.3, 10)
+size = Vector3(15, 0.3, 15)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gj3mg"]
-size = Vector3(9, 0.3, 10)
+size = Vector3(15, 0.3, 15)
 
 [node name="Level1" type="Node3D"]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.999491, -0.0160732, -0.0275412, -0.0223891, 0.968714, 0.247169, 0.0227067, 0.24766, -0.968581, 0.0572506, 4.42609, -9.3792)
-fov = 76.2686
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0317655, -0.418636)
